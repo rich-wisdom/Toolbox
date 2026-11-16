@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "windows-toolbox": {
+      "command": "C:\\Program Files\\Windows Toolbox\\WindowsToolbox.MCP.exe",
+      "args": []
+    }
+  }
+}
