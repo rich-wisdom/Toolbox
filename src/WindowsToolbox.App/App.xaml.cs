@@ -9,6 +9,7 @@ using WindowsToolbox.Core.Services;
 using WindowsToolbox.Tools.Developer;
 using WindowsToolbox.Tools.File;
 using WindowsToolbox.Tools.Image;
+using WindowsToolbox.Tools.Video;
 
 namespace WindowsToolbox.App;
 
@@ -86,6 +87,23 @@ public partial class App : Application
                         new ColorPickerTool(),
                         new RedactImageTool(),
                         new WatermarkTool(),
+                        
+                        // Video Tools
+                        new DownloadVideoTool(),
+                        new CompressVideoTool(),
+                        new ConvertVideoTool(),
+                        new TrimVideoTool(),
+                        new MergeVideosTool(),
+                        new CropRotateVideoTool(),
+                        new ResizeVideoTool(),
+                        new ChangeSpeedTool(),
+                        new MuteVideoTool(),
+                        new ReplaceAudioTool(),
+                        new BurnSubtitlesTool(),
+                        new ExtractFramesTool(),
+                        new ExtractAudioTool(),
+                        new MediaInfoTool(),
+                        new VideoToGifTool(),
                     };
                     return new ToolRegistry(tools);
                 });
