@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WindowsToolbox.Tools", "src
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WindowsToolbox.MCP", "src\WindowsToolbox.MCP\WindowsToolbox.MCP.csproj", "{D4E5F678-90AB-CDEF-1234-567890ABCDEF}"
 EndProject
+Project("{C7167F0D-BC9F-4B6E-AFE1-012C56B48DB5}") = "WindowsToolbox.Package", "src\WindowsToolbox.Package\WindowsToolbox.Package.wapproj", "{8B7C59A8-7E64-4D1F-B30A-5E67F1F50DE3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -69,5 +71,17 @@ Global
 		{D4E5F678-90AB-CDEF-1234-567890ABCDEF}.Release|x86.Build.0 = Release|x86
 		{D4E5F678-90AB-CDEF-1234-567890ABCDEF}.Release|ARM64.ActiveCfg = Release|ARM64
 		{D4E5F678-90AB-CDEF-1234-567890ABCDEF}.Release|ARM64.Build.0 = Release|ARM64
+		{8B7C59A8-7E64-4D1F-B30A-5E67F1F50DE3}.Debug|x64.ActiveCfg = Debug|x64
+		{8B7C59A8-7E64-4D1F-B30A-5E67F1F50DE3}.Debug|x64.Build.0 = Debug|x64
+		{8B7C59A8-7E64-4D1F-B30A-5E67F1F50DE3}.Debug|x86.ActiveCfg = Debug|x86
+		{8B7C59A8-7E64-4D1F-B30A-5E67F1F50DE3}.Debug|x86.Build.0 = Debug|x86
+		{8B7C59A8-7E64-4D1F-B30A-5E67F1F50DE3}.Debug|ARM64.ActiveCfg = Debug|ARM64
+		{8B7C59A8-7E64-4D1F-B30A-5E67F1F50DE3}.Debug|ARM64.Build.0 = Debug|ARM64
+		{8B7C59A8-7E64-4D1F-B30A-5E67F1F50DE3}.Release|x64.ActiveCfg = Release|x64
+		{8B7C59A8-7E64-4D1F-B30A-5E67F1F50DE3}.Release|x64.Build.0 = Release|x64
+		{8B7C59A8-7E64-4D1F-B30A-5E67F1F50DE3}.Release|x86.ActiveCfg = Release|x86
+		{8B7C59A8-7E64-4D1F-B30A-5E67F1F50DE3}.Release|x86.Build.0 = Release|x86
+		{8B7C59A8-7E64-4D1F-B30A-5E67F1F50DE3}.Release|ARM64.ActiveCfg = Release|ARM64
+		{8B7C59A8-7E64-4D1F-B30A-5E67F1F50DE3}.Release|ARM64.Build.0 = Release|ARM64
 	EndGlobalSection
 EndGlobal
