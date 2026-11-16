@@ -8,6 +8,7 @@ using WindowsToolbox.Core.Interfaces;
 using WindowsToolbox.Core.Services;
 using WindowsToolbox.Tools.Developer;
 using WindowsToolbox.Tools.File;
+using WindowsToolbox.Tools.Image;
 
 namespace WindowsToolbox.App;
 
@@ -50,6 +51,19 @@ public partial class App : Application
                     {
                         new JsonFormatterTool(),
                         new QRCodeTool(),
+                        new ScreenshotTool(),
+                        new BeautifyScreenshotTool(),
+                        new AnnotateScreenshotTool(),
+                        new RemoveBackgroundTool(),
+                        new BlurFacesTool(),
+                        new ConvertImagesTool(),
+                        new CompressImagesTool(),
+                        new ResizeImagesTool(),
+                        new RotateImagesTool(),
+                        new RemoveMetadataTool(),
+                        new ColorPickerTool(),
+                        new RedactImageTool(),
+                        new WatermarkTool(),
                     };
                     return new ToolRegistry(tools);
                 });
