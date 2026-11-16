@@ -9,6 +9,7 @@ using WindowsToolbox.Core.Services;
 using WindowsToolbox.Tools.Developer;
 using WindowsToolbox.Tools.File;
 using WindowsToolbox.Tools.Image;
+using WindowsToolbox.Tools.System;
 using WindowsToolbox.Tools.Video;
 
 namespace WindowsToolbox.App;
@@ -104,6 +105,26 @@ public partial class App : Application
                         new ExtractAudioTool(),
                         new MediaInfoTool(),
                         new VideoToGifTool(),
+
+                        // System Tools
+                        new StorageExplorerTool(),
+                        new BatteryHealthTool(),
+                        new NetworkSpeedTestTool(),
+                        new WiFiPasswordTool(),
+                        new KeepAwakeTool(),
+                        new UninstallAppTool(),
+                        new ClipboardHistoryTool(),
+                        new DiskSpeedTestTool(),
+                        new PresentationModeTool(),
+                        new CleanKeyboardTool(),
+                        new DisplayControlTool(),
+                        new MouseFixesTool(),
+                        new DeadPixelTestTool(),
+                        new EjectAllDisksTool(),
+                        new LoginItemsTool(),
+                        new FixAppDamagedTool(),
+                        new ResetPermissionsTool(),
+                        new HiddenSettingsTool(),
                     };
                     return new ToolRegistry(tools);
                 });
