@@ -7,7 +7,8 @@ using WindowsToolbox.App.Views;
 using WindowsToolbox.Core.Interfaces;
 using WindowsToolbox.Core.Services;
 using WindowsToolbox.Tools.Developer;
-using WindowsToolbox.Tools.File;
+using WindowsToolbox.Tools.FileUtilities;
+using WindowsToolbox.Tools.SystemUtilities;
 
 namespace WindowsToolbox.App;
 
@@ -48,8 +49,48 @@ public partial class App : Application
                 {
                     var tools = new ITool[]
                     {
+                        // Developer Tools
                         new JsonFormatterTool(),
+                        new Base64Tool(),
+                        new HashGeneratorTool(),
+                        new UuidGeneratorTool(),
+                        new JwtDecoderTool(),
+                        new TimestampConverterTool(),
+                        new DiffCheckerTool(),
+                        new RegexTesterTool(),
+                        new CleanLinksTool(),
+                        new CoordinatePickerTool(),
+                        new UnicodeInspectorTool(),
+                        new LoremIpsumTool(),
+                        new PasswordGeneratorTool(),
+                        new CsvJsonConverterTool(),
+                        
+                        // File Tools
                         new QRCodeTool(),
+                        new BatchRenameTool(),
+                        new FindDuplicatesTool(),
+                        new ZipUnzipTool(),
+                        new OrganizeDownloadsTool(),
+
+                        // System Tools
+                        new StorageExplorerTool(),
+                        new BatteryHealthTool(),
+                        new NetworkSpeedTestTool(),
+                        new WiFiPasswordTool(),
+                        new KeepAwakeTool(),
+                        new UninstallAppTool(),
+                        new ClipboardHistoryTool(),
+                        new DiskSpeedTestTool(),
+                        new PresentationModeTool(),
+                        new CleanKeyboardTool(),
+                        new DisplayControlTool(),
+                        new MouseFixesTool(),
+                        new DeadPixelTestTool(),
+                        new EjectAllDisksTool(),
+                        new LoginItemsTool(),
+                        new FixAppDamagedTool(),
+                        new ResetPermissionsTool(),
+                        new HiddenSettingsTool(),
                     };
                     return new ToolRegistry(tools);
                 });

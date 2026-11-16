@@ -8,7 +8,7 @@ Since this repository has been created locally, you need to create the correspon
 
 1. Go to https://github.com/new
 2. Set repository name: `windows-toolbox`
-3. Set description: "Native Windows utility app with 102 professional tools. Built with WinUI 3 and .NET 8."
+3. Set description: "Early-stage native Windows utility catalog built with WinUI 3 and .NET 8."
 4. Choose visibility: Public or Private
 5. **DO NOT** initialize with README, .gitignore, or license (we already have these)
 6. Click "Create repository"
@@ -19,7 +19,7 @@ Since this repository has been created locally, you need to create the correspon
 If you have GitHub CLI installed and authenticated:
 
 ```bash
-gh repo create rich-wisdom/windows-toolbox --public --description "Native Windows utility app with 102 professional tools. Built with WinUI 3 and .NET 8." --source . --remote origin --push
+gh repo create rich-wisdom/windows-toolbox --public --description "Early-stage native Windows utility catalog built with WinUI 3 and .NET 8." --source . --remote origin --push
 ```
 
 ### Pushing the Code (After Creating the Repository)

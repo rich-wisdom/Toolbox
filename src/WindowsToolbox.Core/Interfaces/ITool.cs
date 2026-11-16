@@ -1,3 +1,5 @@
+using System.Text.Json;
+
 namespace WindowsToolbox.Core.Interfaces;
 
 public interface ITool
@@ -17,7 +19,26 @@ public interface ITool
 
 public record ToolParameters(Dictionary<string, object> Values)
 {
-    public T? Get<T>(string key) => Values.TryGetValue(key, out var value) && value is T typedValue ? typedValue : default;
+    public T? Get<T>(string key)
+    {
+        if (!Values.TryGetValue(key, out var value) || value is null)
+            return default;
+
+        if (value is T typedValue)
+            return typedValue;
+
+        try
+        {
+            if (value is JsonElement element)
+                return element.Deserialize<T>();
+
+            return JsonSerializer.Deserialize<T>(JsonSerializer.Serialize(value));
+        }
+        catch (JsonException)
+        {
+            return default;
+        }
+    }
 }
 
 public record ToolResult(bool Success, string Message, Dictionary<string, object>? Data = null, Exception? Error = null)

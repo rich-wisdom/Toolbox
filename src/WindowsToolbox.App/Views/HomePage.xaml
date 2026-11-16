@@ -11,7 +11,7 @@
             <TextBlock Text="Windows Toolbox"
                        Style="{StaticResource TitleTextBlockStyle}"/>
             
-            <TextBlock Text="102 professional tools for Windows"
+            <TextBlock Text="A growing catalog of Windows utilities"
                        Style="{StaticResource SubtitleTextBlockStyle}"
                        Opacity="0.7"/>
 
