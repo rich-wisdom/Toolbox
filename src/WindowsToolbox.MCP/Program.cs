@@ -25,8 +25,28 @@ public class McpServer
     {
         var tools = new ITool[]
         {
+            // Developer Tools
             new JsonFormatterTool(),
+            new Base64Tool(),
+            new HashGeneratorTool(),
+            new UuidGeneratorTool(),
+            new JwtDecoderTool(),
+            new TimestampConverterTool(),
+            new DiffCheckerTool(),
+            new RegexTesterTool(),
+            new CleanLinksTool(),
+            new CoordinatePickerTool(),
+            new UnicodeInspectorTool(),
+            new LoremIpsumTool(),
+            new PasswordGeneratorTool(),
+            new CsvJsonConverterTool(),
+            
+            // File Tools
             new QRCodeTool(),
+            new BatchRenameTool(),
+            new FindDuplicatesTool(),
+            new ZipUnzipTool(),
+            new OrganizeDownloadsTool(),
         };
         
         _toolRegistry = new ToolRegistry(tools);
