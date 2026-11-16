@@ -4,6 +4,7 @@ using SixLabors.ImageSharp.PixelFormats;
 using SixLabors.ImageSharp.Processing;
 using SixLabors.ImageSharp.Drawing.Processing;
 using SixLabors.Fonts;
+using Color = SixLabors.ImageSharp.Color;
 
 namespace WindowsToolbox.Tools.Image;
 

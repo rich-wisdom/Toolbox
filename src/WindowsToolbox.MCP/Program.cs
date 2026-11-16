@@ -1,11 +1,6 @@
 using WindowsToolbox.Core.Interfaces;
 using WindowsToolbox.MCP.Services;
-using WindowsToolbox.Tools.Video;
-using WindowsToolbox.Tools.Audio;
-using WindowsToolbox.Tools.Image;
-using WindowsToolbox.Tools.Document;
-using WindowsToolbox.Tools.File;
-using WindowsToolbox.Tools.TextAndSpeech;
+using WindowsToolbox.Tools.FileUtilities;
 using WindowsToolbox.Tools.Developer;
 
 namespace WindowsToolbox.MCP;
@@ -56,49 +51,10 @@ class Program
     {
         return new List<ITool>
         {
-            // Video Tools (6)
-            new CompressVideoTool(),
-            new ConvertVideoTool(),
-            new TrimVideoTool(),
-            new MergeVideosTool(),
-            new BurnSubtitlesTool(),
-            new DownloadVideoTool(),
-
-            // Audio Tools (3)
-            new CleanUpAudioTool(),
-            new TrimAudioTool(),
-            new ConvertAudioTool(),
-
-            // Image Tools (7)
-            new CompressImagesTool(),
-            new ResizeImagesTool(),
-            new RemoveBackgroundTool(),
-            new BeautifyScreenshotTool(),
-            new ConvertImagesTool(),
-            new BlurFacesTool(),
-            new WatermarkTool(),
-
-            // Document Tools (8)
-            new MergePdfsTool(),
-            new CompressPdfTool(),
-            new SignPdfTool(),
-            new SplitPdfTool(),
-            new PdfToWordTool(),
-            new PdfToImagesTool(),
-            new OcrPdfTool(),
-            new RedactPdfTool(),
-
             // File Tools (3)
             new BatchRenameTool(),
             new QRCodeTool(),
             new ZipFilesTool(),
-
-            // Text & Speech Tools (5)
-            new TranscribeTool(),
-            new TranslateTool(),
-            new ExtractTextTool(),
-            new SummarizeTool(),
-            new OcrImageTool(),
 
             // Developer Tools (4)
             new JsonFormatterTool(),

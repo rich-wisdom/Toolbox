@@ -2,7 +2,7 @@ using Microsoft.Win32;
 using System.Diagnostics;
 using WindowsToolbox.Core.Interfaces;
 
-namespace WindowsToolbox.Tools.System;
+namespace WindowsToolbox.Tools.SystemUtilities;
 
 public class LoginItemsTool : BaseTool
 {
@@ -42,7 +42,7 @@ public class LoginItemsTool : BaseTool
                     if (string.IsNullOrEmpty(enableItemName))
                         return Failure("Item name is required to enable");
                     
-                    return Success("Enabling startup items requires re-adding them through the application or task scheduler");
+                    return Failure("Enabling startup items is not implemented.");
 
                 default:
                     return Failure($"Unknown action: {action}");

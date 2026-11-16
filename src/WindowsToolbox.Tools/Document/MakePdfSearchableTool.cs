@@ -10,6 +10,7 @@ public class MakePdfSearchableTool : BaseTool
     public override string Description => "Add OCR text layer to scanned PDF";
     public override string Category => "document";
     public override string Icon => "Search";
+    public override bool IsAvailable => false;
 
     public override async Task<ToolResult> ExecuteAsync(ToolParameters parameters, IProgress<ToolProgress>? progress = null, CancellationToken cancellationToken = default)
     {
@@ -25,14 +26,8 @@ public class MakePdfSearchableTool : BaseTool
             if (string.IsNullOrEmpty(outputPath))
                 return Failure("Output path is required");
 
-            ReportProgress(progress, 0, "Performing OCR...");
-
-            ReportProgress(progress, 100, "OCR complete");
-            return await Task.FromResult(Success("OCR processing requires Windows.Media.Ocr integration", new Dictionary<string, object>
-            {
-                ["outputPath"] = outputPath,
-                ["note"] = "Full OCR implementation requires additional WinRT API integration"
-            }));
+            return await Task.FromResult(Failure(
+                "Searchable PDF OCR is not implemented. No output file was created."));
         }
         catch (Exception ex)
         {

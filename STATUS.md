@@ -81,7 +81,7 @@ Placeholder tools (ready for implementation):
 ### 10. ✅ Documentation
 - **README.md**: Complete overview and instructions
 - **ARCHITECTURE.md**: Design patterns and structure
-- **TOOLS.md**: All 102 tools listed and described
+- **TOOLS.md**: Planned 102-entry catalog (not a functional-tool count)
 - **PROJECT_STRUCTURE.md**: Directory layout
 - **SETUP.md**: GitHub repository creation instructions
 - **QUICKSTART.md**: Step-by-step guide
@@ -147,7 +147,7 @@ cd /agent/windows-toolbox
 cd /agent/windows-toolbox
 gh auth login  # One-time authentication
 gh repo create rich-wisdom/windows-toolbox --public \
-    --description "Native Windows utility app with 102 professional tools. Built with WinUI 3 and .NET 8." \
+    --description "Early-stage native Windows utility catalog built with WinUI 3 and .NET 8." \
     --source . --push
 ```
 

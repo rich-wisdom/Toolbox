@@ -431,8 +431,10 @@ For issues with the installer setup:
 
 This implementation provides a complete, professional-grade installer and distribution system for Windows Toolbox. It follows Windows best practices, provides automatic updates, and integrates seamlessly with modern Windows development workflows.
 
-The system is production-ready and only requires:
+The packaging system is a development baseline, not a production-ready release. It still requires:
 1. Branded images (replacing placeholders)
+2. A successful Windows CI build and clean-machine install test
+3. Trusted code signing and dependency-specific functional validation
 2. Code signing certificate
 3. Version tagging
 

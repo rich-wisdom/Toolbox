@@ -10,6 +10,7 @@ public class PdfToWordTool : BaseTool
     public override string Description => "Convert PDF to editable Word document";
     public override string Category => "document";
     public override string Icon => "Document";
+    public override bool IsAvailable => false;
 
     public override async Task<ToolResult> ExecuteAsync(ToolParameters parameters, IProgress<ToolProgress>? progress = null, CancellationToken cancellationToken = default)
     {
@@ -25,14 +26,8 @@ public class PdfToWordTool : BaseTool
             if (string.IsNullOrEmpty(outputPath))
                 return Failure("Output path is required");
 
-            ReportProgress(progress, 0, "Converting PDF to Word...");
-
-            ReportProgress(progress, 100, "Conversion complete");
-            return await Task.FromResult(Success("PDF to Word conversion requires specialized library", new Dictionary<string, object>
-            {
-                ["outputPath"] = outputPath,
-                ["note"] = "Full implementation requires commercial library like Aspose.PDF or Syncfusion"
-            }));
+            return await Task.FromResult(Failure(
+                "PDF to Word is not implemented. No output file was created."));
         }
         catch (Exception ex)
         {

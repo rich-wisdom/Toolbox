@@ -26,7 +26,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 - Initial release
-- 102 professional tools across 7 categories
+- Integrated candidate tool catalog across eight categories; individual tools still require verification
 - Quick launcher with global hotkey (Ctrl+Alt+Space)
 - Modern WinUI 3 interface
 - MCP server integration for AI agents

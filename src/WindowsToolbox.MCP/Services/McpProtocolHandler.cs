@@ -144,6 +144,8 @@ public class McpProtocolHandler
         return new McpToolsListResult
         {
             Tools = ToolSchemaProvider.GetAllToolSchemas()
+                .Where(tool => _toolExecutor.ContainsTool(tool.Name))
+                .ToList()
         };
     }
 

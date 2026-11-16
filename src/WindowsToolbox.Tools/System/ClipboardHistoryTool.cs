@@ -1,7 +1,7 @@
 using System.Runtime.InteropServices;
 using WindowsToolbox.Core.Interfaces;
 
-namespace WindowsToolbox.Tools.System;
+namespace WindowsToolbox.Tools.SystemUtilities;
 
 public class ClipboardHistoryTool : BaseTool
 {

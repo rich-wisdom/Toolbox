@@ -1,7 +1,7 @@
 using System.Runtime.InteropServices;
 using WindowsToolbox.Core.Interfaces;
 
-namespace WindowsToolbox.Tools.System;
+namespace WindowsToolbox.Tools.SystemUtilities;
 
 public class DisplayControlTool : BaseTool
 {
@@ -43,7 +43,7 @@ public class DisplayControlTool : BaseTool
                         new Dictionary<string, object> { ["monitorCount"] = monitorCount });
 
                 case "brightness":
-                    return Success("Brightness control requires DDC/CI protocol implementation. Use Windows display settings or dedicated monitor control software.");
+                    return Failure("Brightness control is not implemented; DDC/CI support is required.");
 
                 default:
                     return Failure($"Unknown action: {action}");

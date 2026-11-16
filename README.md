@@ -1,26 +1,21 @@
 # Windows Toolbox
 
-A native Windows application with 102 professional tools for video, audio, image, document processing, and more. Built with WinUI 3 and .NET 8.
+An early-stage native Windows utility application built with WinUI 3 and .NET 8.
+
+> The repository contains a large candidate tool catalog, but it has not been verified as 102 functional tools. The current build registers 37 developer, file, and system candidates. Media, document, image, and text/speech sources are retained but excluded from compilation because their merged implementations still have unresolved API and platform-integration errors.
 
 ## Features
 
-- **102 Professional Tools** across 7 categories
+- **37 registered candidate tools** across developer, file, and system categories
 - **Quick Launcher** - Press `Ctrl+Alt+Space` anywhere to search and launch tools
-- **Offline-First** - All processing happens locally on your machine
+- **Local processing where implemented** - Some media features require FFmpeg, yt-dlp, Whisper models, or other local dependencies
 - **MCP Integration** - Expose tools to AI agents (Claude, Cursor, VS Code)
 - **Modern UI** - Native Windows 11 design with WinUI 3
 - **MVVM Architecture** - Clean, maintainable code structure
 
 ## Tool Categories
 
-- **Video Tools (15)** - Download, compress, convert, trim, merge, and edit videos
-- **Audio Tools (5)** - Clean, record, trim, extract, and convert audio
-- **Image Tools (13)** - Screenshot, beautify, annotate, remove backgrounds, and more
-- **Document Tools (23)** - Scan, merge, sign, compress, and convert PDFs and documents
-- **Text & Speech Tools (9)** - Transcribe, translate, summarize, OCR, and text utilities
-- **File Tools (5)** - QR codes, batch rename, find duplicates, zip/unzip
-- **System Tools (18)** - Storage explorer, battery health, network monitoring, and more
-- **Developer Tools (14)** - JSON formatter, Base64, hashing, UUID, JWT, and more
+The source catalog covers video, audio, image, document, text/speech, file, system, and developer utilities. Only the 37 currently registered candidates are compiled into the app, and their presence is not a claim of end-to-end verification. The experimental MCP server advertises seven developer/file candidates.
 
 ## Requirements
 
@@ -40,8 +35,8 @@ A native Windows application with 102 professional tools for video, audio, image
 
 2. Clone the repository:
 ```bash
-git clone https://github.com/rich-wisdom/windows-toolbox.git
-cd windows-toolbox
+git clone https://github.com/rich-wisdom/Toolbox.git
+cd Toolbox
 ```
 
 3. Open `WindowsToolbox.sln` in Visual Studio 2022
@@ -57,14 +52,26 @@ cd windows-toolbox
 ### Build from Command Line
 
 ```powershell
-# Restore packages
-dotnet restore
+# Build the unpackaged x64 app
+dotnet restore WindowsToolbox.sln
+dotnet build src/WindowsToolbox.App/WindowsToolbox.App.csproj -c Release -p:Platform=x64
+```
 
-# Build the solution
-dotnet build WindowsToolbox.sln -c Release
+The WinUI application and MSIX packaging project require Windows. They are not expected to build on Linux or macOS.
 
-# Run the app
-dotnet run --project src/WindowsToolbox.App/WindowsToolbox.App.csproj
+### Build an MSIX
+
+From Windows PowerShell with Visual Studio 2022, the Windows Application Packaging workload, and the Windows 10/11 SDK installed:
+
+```powershell
+.\build\Build-Installer.ps1 -Configuration Release -Platform x64
+```
+
+This creates an **unsigned** development MSIX in `dist\`. Sign it with a certificate trusted by the target machine before installation:
+
+```powershell
+.\build\Sign-Package.ps1 -PackagePath .\dist\<package>.msix -CertificatePath .\certificate.pfx
+Add-AppxPackage .\dist\<signed-package>.msix
 ```
 
 ## Project Structure
@@ -184,43 +191,9 @@ Key dependencies used:
 - **QRCoder** - QR code generation
 - **SharpCompress** - Archive handling
 
-## Development Roadmap
+## Verification status
 
-### Phase 1: Foundation ✅
-- [x] Project structure
-- [x] Main window and navigation
-- [x] Quick launcher system
-- [x] Tool architecture
-- [x] Settings infrastructure
-
-### Phase 2: Core Tools (In Progress)
-- [ ] Developer tools (14 tools)
-- [ ] File tools (5 tools)
-
-### Phase 3-8: Tool Implementation
-- [ ] Document tools (23 tools)
-- [ ] Image tools (13 tools)
-- [ ] Video tools (15 tools)
-- [ ] Audio tools (5 tools)
-- [ ] Text & Speech tools (9 tools)
-- [ ] System tools (18 tools)
-
-### Phase 9: MCP Server
-- [ ] Complete MCP protocol implementation
-- [ ] Tool discovery and invocation
-- [ ] Progress streaming
-- [ ] Testing with AI agents
-
-### Phase 10: Polish
-- [ ] UI refinement
-- [ ] Performance optimization
-- [ ] Comprehensive testing
-- [ ] Documentation
-
-### Phase 11: Distribution
-- [ ] MSIX installer
-- [ ] Auto-update system
-- [ ] Licensing (freemium model)
+The integrated source has been statically audited and is built by Windows CI. Functional, end-to-end verification of every catalog entry is still required. In particular, tools that invoke FFmpeg, yt-dlp, Tesseract, Whisper, Office/LibreOffice, Windows APIs, or hardware-specific features need dependency-specific tests on Windows.
 
 ## Contributing
 

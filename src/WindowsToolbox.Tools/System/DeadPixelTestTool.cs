@@ -1,6 +1,6 @@
 using WindowsToolbox.Core.Interfaces;
 
-namespace WindowsToolbox.Tools.System;
+namespace WindowsToolbox.Tools.SystemUtilities;
 
 public class DeadPixelTestTool : BaseTool
 {
@@ -22,7 +22,7 @@ public class DeadPixelTestTool : BaseTool
                     return Success("Dead pixel test will display fullscreen colors. Use arrow keys or click to cycle through: Red, Green, Blue, White, Black, and pattern tests. Press ESC to exit.");
 
                 case "start":
-                    return Success("Dead pixel test requires a dedicated UI window. This feature needs to be launched from the main application.");
+                    return Failure("Dead pixel test UI is not implemented.");
 
                 default:
                     return Failure($"Unknown mode: {mode}");

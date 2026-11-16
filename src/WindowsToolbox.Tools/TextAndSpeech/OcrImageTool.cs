@@ -9,6 +9,7 @@ public class OcrImageTool : BaseTool
     public override string Description => "Extract text from images using OCR";
     public override string Category => "text";
     public override string Icon => "Text";
+    public override bool IsAvailable => false;
 
     public override async Task<ToolResult> ExecuteAsync(ToolParameters parameters, IProgress<ToolProgress>? progress = null, CancellationToken cancellationToken = default)
     {
@@ -23,22 +24,8 @@ public class OcrImageTool : BaseTool
             if (!System.IO.File.Exists(filePath))
                 return Failure($"File not found: {filePath}");
 
-            ReportProgress(progress, 10, "Analyzing image...");
-            await Task.Delay(100, cancellationToken);
-
-            ReportProgress(progress, 50, "Performing OCR...");
-            await Task.Delay(100, cancellationToken);
-
-            var extractedText = "[OCR extracted text would appear here]";
-
-            ReportProgress(progress, 100, "Complete");
-
-            return Success($"OCR completed successfully (language: {language})", new Dictionary<string, object>
-            {
-                ["extracted_text"] = extractedText,
-                ["language"] = language,
-                ["confidence"] = 0.95
-            });
+            return await Task.FromResult(Failure(
+                "Image OCR is not implemented. No text was extracted."));
         }
         catch (Exception ex)
         {

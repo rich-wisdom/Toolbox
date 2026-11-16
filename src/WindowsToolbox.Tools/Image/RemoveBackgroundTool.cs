@@ -2,6 +2,8 @@ using WindowsToolbox.Core.Interfaces;
 using SixLabors.ImageSharp;
 using SixLabors.ImageSharp.PixelFormats;
 using SixLabors.ImageSharp.Processing;
+using Color = SixLabors.ImageSharp.Color;
+using Rectangle = SixLabors.ImageSharp.Rectangle;
 
 namespace WindowsToolbox.Tools.Image;
 

@@ -2,7 +2,7 @@ using Microsoft.Win32;
 using System.Diagnostics;
 using WindowsToolbox.Core.Interfaces;
 
-namespace WindowsToolbox.Tools.System;
+namespace WindowsToolbox.Tools.SystemUtilities;
 
 public class HiddenSettingsTool : BaseTool
 {

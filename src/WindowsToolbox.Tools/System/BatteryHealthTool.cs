@@ -2,7 +2,7 @@ using System.Diagnostics;
 using System.Management;
 using WindowsToolbox.Core.Interfaces;
 
-namespace WindowsToolbox.Tools.System;
+namespace WindowsToolbox.Tools.SystemUtilities;
 
 public class BatteryHealthTool : BaseTool
 {

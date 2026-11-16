@@ -15,6 +15,7 @@ public class PdfToImagesTool : BaseTool
     public override string Description => "Convert PDF pages to image files";
     public override string Category => "document";
     public override string Icon => "Image";
+    public override bool IsAvailable => false;
 
     public override async Task<ToolResult> ExecuteAsync(ToolParameters parameters, IProgress<ToolProgress>? progress = null, CancellationToken cancellationToken = default)
     {
@@ -31,32 +32,8 @@ public class PdfToImagesTool : BaseTool
             if (string.IsNullOrEmpty(outputFolder))
                 return Failure("Output folder is required");
 
-            Directory.CreateDirectory(outputFolder);
-            ReportProgress(progress, 0, "Reading PDF...");
-
-            using var reader = new PdfReader(inputFile);
-            using var pdfDoc = new PdfDocument(reader);
-            var totalPages = pdfDoc.GetNumberOfPages();
-            var baseName = Path.GetFileNameWithoutExtension(inputFile);
-
-            for (int i = 1; i <= totalPages; i++)
-            {
-                if (cancellationToken.IsCancellationRequested)
-                    return Failure("Operation cancelled");
-
-                ReportProgress(progress, (i * 100) / totalPages, $"Converting page {i}...");
-                
-                var outputPath = Path.Combine(outputFolder, $"{baseName}_page_{i}.{format.ToLower()}");
-                
-                await Task.CompletedTask;
-            }
-
-            ReportProgress(progress, 100, "Conversion complete");
-            return Success($"Converted {totalPages} pages to {format.ToUpper()}", new Dictionary<string, object>
-            {
-                ["outputFolder"] = outputFolder,
-                ["pageCount"] = totalPages
-            });
+            return await Task.FromResult(Failure(
+                "PDF rendering is not implemented. No image files were created."));
         }
         catch (Exception ex)
         {

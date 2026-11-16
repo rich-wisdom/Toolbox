@@ -1,7 +1,7 @@
 using System.Text.RegularExpressions;
 using WindowsToolbox.Core.Interfaces;
 
-namespace WindowsToolbox.Tools.File;
+namespace WindowsToolbox.Tools.FileUtilities;
 
 public class BatchRenameTool : BaseTool
 {

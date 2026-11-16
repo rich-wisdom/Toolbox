@@ -40,7 +40,7 @@ gh auth login
 # Create and push
 gh repo create rich-wisdom/windows-toolbox \
     --public \
-    --description "Native Windows utility app with 102 professional tools. Built with WinUI 3 and .NET 8." \
+    --description "Early-stage native Windows utility catalog built with WinUI 3 and .NET 8." \
     --source . \
     --push
 ```
@@ -49,7 +49,7 @@ gh repo create rich-wisdom/windows-toolbox \
 
 1. Go to https://github.com/new
 2. Repository name: `windows-toolbox`
-3. Description: `Native Windows utility app with 102 professional tools. Built with WinUI 3 and .NET 8.`
+3. Description: `Early-stage native Windows utility catalog built with WinUI 3 and .NET 8.`
 4. Visibility: Public
 5. **DO NOT** check any initialization options
 6. Click "Create repository"
@@ -114,7 +114,7 @@ windows-toolbox/
 6. **Documentation**
    - README with full overview
    - ARCHITECTURE guide
-   - TOOLS reference (all 102)
+   - TOOLS reference (102 planned entries, not 102 verified tools)
    - PROJECT_STRUCTURE details
    - This QUICKSTART guide
 

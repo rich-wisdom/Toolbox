@@ -78,7 +78,7 @@ When you launch Windows Toolbox for the first time:
 
 1. **Welcome Screen**: Brief introduction to the app
 2. **Global Hotkey**: The default hotkey is `Ctrl+Alt+Space`
-3. **Tool Categories**: Browse 102 tools across 7 categories
+3. **Tool Categories**: Browse the integrated tool catalog; availability varies by tool and installed dependencies
 
 ## Features Setup
 
@@ -319,7 +319,7 @@ See LICENSES.md for full license texts.
 
 | Feature | Windows Toolbox | Other Tools |
 |---------|-----------------|-------------|
-| Number of tools | 102 | Varies |
+| Tool catalog | Large, partially verified | Varies |
 | Installation | Single MSIX | Multiple apps |
 | Quick Launch | Built-in | Separate launcher |
 | AI Integration | Native MCP | None |
@@ -332,7 +332,7 @@ See LICENSES.md for full license texts.
 
 After installation:
 
-1. **Explore Tools**: Browse all 102 tools by category
+1. **Explore Tools**: Browse tools by category and check availability before running them
 2. **Set Hotkey**: Customize quick launcher hotkey
 3. **Try Quick Launcher**: Press `Ctrl+Alt+Space`
 4. **Configure MCP**: If using with AI agents

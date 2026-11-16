@@ -2,6 +2,7 @@ using WindowsToolbox.Core.Interfaces;
 using SixLabors.ImageSharp;
 using SixLabors.ImageSharp.PixelFormats;
 using SixLabors.ImageSharp.Processing;
+using SixLabors.ImageSharp.Processing.Processors.Transforms;
 
 namespace WindowsToolbox.Tools.Image;
 

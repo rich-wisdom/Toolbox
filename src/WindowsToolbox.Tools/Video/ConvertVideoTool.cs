@@ -74,7 +74,7 @@ public class ConvertVideoTool : BaseTool
         }
     }
 
-    private static VideoCodec GetVideoCodec(string codec) => codec.ToLower() switch
+    private static string GetVideoCodec(string codec) => codec.ToLower() switch
     {
         "h264" => VideoCodec.LibX264,
         "h265" => VideoCodec.LibX265,
@@ -82,7 +82,7 @@ public class ConvertVideoTool : BaseTool
         _ => VideoCodec.LibX264
     };
 
-    private static AudioCodec GetAudioCodec(string codec) => codec.ToLower() switch
+    private static string GetAudioCodec(string codec) => codec.ToLower() switch
     {
         "aac" => AudioCodec.Aac,
         "mp3" => AudioCodec.LibMp3Lame,

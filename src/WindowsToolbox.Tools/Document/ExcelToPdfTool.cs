@@ -10,6 +10,7 @@ public class ExcelToPdfTool : BaseTool
     public override string Description => "Convert Excel spreadsheets to PDF";
     public override string Category => "document";
     public override string Icon => "Table";
+    public override bool IsAvailable => false;
 
     public override async Task<ToolResult> ExecuteAsync(ToolParameters parameters, IProgress<ToolProgress>? progress = null, CancellationToken cancellationToken = default)
     {
@@ -29,14 +30,8 @@ public class ExcelToPdfTool : BaseTool
             if (extension != ".xls" && extension != ".xlsx")
                 return Failure("Input must be an Excel file (.xls or .xlsx)");
 
-            ReportProgress(progress, 0, "Converting Excel to PDF...");
-
-            ReportProgress(progress, 100, "Conversion complete");
-            return await Task.FromResult(Success("Excel to PDF conversion requires Office Interop or LibreOffice", new Dictionary<string, object>
-            {
-                ["outputPath"] = outputPath,
-                ["note"] = "Full implementation requires Office installation or LibreOffice portable"
-            }));
+            return await Task.FromResult(Failure(
+                "Excel to PDF is not implemented. No output file was created."));
         }
         catch (Exception ex)
         {

@@ -10,6 +10,7 @@ public class WebPageToPdfTool : BaseTool
     public override string Description => "Convert web page to PDF";
     public override string Category => "document";
     public override string Icon => "Globe";
+    public override bool IsAvailable => false;
 
     public override async Task<ToolResult> ExecuteAsync(ToolParameters parameters, IProgress<ToolProgress>? progress = null, CancellationToken cancellationToken = default)
     {
@@ -28,14 +29,8 @@ public class WebPageToPdfTool : BaseTool
             if (!Uri.TryCreate(url, UriKind.Absolute, out _))
                 return Failure("Invalid URL format");
 
-            ReportProgress(progress, 0, "Loading web page...");
-
-            ReportProgress(progress, 100, "Conversion complete");
-            return await Task.FromResult(Success("Web page to PDF requires WebView2 integration", new Dictionary<string, object>
-            {
-                ["outputPath"] = outputPath,
-                ["note"] = "Full implementation requires Microsoft.Web.WebView2 runtime and additional setup"
-            }));
+            return await Task.FromResult(Failure(
+                "Web page to PDF is not implemented. No output file was created."));
         }
         catch (Exception ex)
         {

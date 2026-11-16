@@ -1,21 +1,21 @@
-# MCP Server Implementation Summary
+# MCP Server Implementation Status
 
 ## Overview
 
-Successfully implemented a complete MCP (Model Context Protocol) server for Windows Toolbox, exposing 36 tools to AI assistants like Cursor, Claude Desktop, and VS Code.
+The repository contains an experimental MCP stdio server and schemas for 36 candidate tools. Runtime discovery filters schemas against the compiled registry; the current integration advertises seven developer/file candidates. End-to-end compatibility with Cursor, Claude Desktop, and VS Code has not been verified.
 
-## Implementation Status: ✅ Complete
+## Implementation Status: Experimental and partially verified
 
 ### Components Implemented
 
 #### 1. Core MCP Infrastructure
-- ✅ **McpProtocolHandler** - JSON-RPC 2.0 protocol over stdio
-- ✅ **ToolExecutor** - Tool invocation and execution
-- ✅ **ToolSchemaProvider** - Complete schemas for all 36 tools
+- **McpProtocolHandler** - JSON-RPC-style protocol over stdio
+- **ToolExecutor** - Tool invocation, aliases, and basic argument normalization
+- **ToolSchemaProvider** - Candidate schemas, filtered against available runtime tools
 - ✅ **McpModels** - Data models for requests/responses
 - ✅ **AIAppSetup** - Auto-configuration utility
 
-#### 2. Tool Categories (36 Total)
+#### 2. Candidate schemas (36 total; fewer advertised at runtime)
 
 ##### Video Tools (6)
 - ✅ compress-video

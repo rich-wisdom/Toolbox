@@ -1,7 +1,7 @@
 using System.Security.Cryptography;
 using WindowsToolbox.Core.Interfaces;
 
-namespace WindowsToolbox.Tools.File;
+namespace WindowsToolbox.Tools.FileUtilities;
 
 public class FindDuplicatesTool : BaseTool
 {

@@ -15,7 +15,7 @@
     <DisplayName>Windows Toolbox</DisplayName>
     <PublisherDisplayName>Rich Wisdom</PublisherDisplayName>
     <Logo>Images\StoreLogo.png</Logo>
-    <Description>A native Windows application with 102 professional tools for video, audio, image, document processing, and more.</Description>
+    <Description>An early-stage catalog of local Windows utilities.</Description>
   </Properties>
 
   <Dependencies>
@@ -32,7 +32,7 @@
       EntryPoint="$targetentrypoint$">
       <uap:VisualElements
         DisplayName="Windows Toolbox"
-        Description="Professional tools for Windows"
+        Description="An early-stage catalog of Windows utilities"
         BackgroundColor="transparent"
         Square150x150Logo="Images\Square150x150Logo.png"
         Square44x44Logo="Images\Square44x44Logo.png">

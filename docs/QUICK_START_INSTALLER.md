@@ -187,6 +187,6 @@ The installer system includes:
 ✅ Comprehensive documentation  
 ✅ Testing scripts  
 ✅ Image generation tools  
-✅ Production-ready workflow  
+⚠️ Development packaging workflow; sign and clean-machine test before distribution
 
 Everything is documented and ready to use!

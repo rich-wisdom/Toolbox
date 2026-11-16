@@ -1,34 +1,31 @@
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <TargetFramework>net8.0</TargetFramework>
+    <TargetFramework>net8.0-windows10.0.19041.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
     <RootNamespace>WindowsToolbox.Tools</RootNamespace>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="FFMpegCore" Version="5.1.0" />
-    <PackageReference Include="SixLabors.ImageSharp" Version="3.1.4" />
-    <PackageReference Include="SixLabors.ImageSharp.Drawing" Version="2.1.3" />
-    <PackageReference Include="itext7" Version="8.0.3" />
-    <PackageReference Include="itext7.bouncy-castle-adapter" Version="8.0.3" />
     <PackageReference Include="QRCoder" Version="1.6.0" />
-    <PackageReference Include="SharpCompress" Version="0.37.2" />
-    <PackageReference Include="DocumentFormat.OpenXml" Version="3.0.2" />
-    <PackageReference Include="Markdig" Version="0.37.0" />
-    <PackageReference Include="Microsoft.ML.OnnxRuntime" Version="1.17.0" />
-    <PackageReference Include="SixLabors.ImageSharp.Web" Version="3.1.2" />
-    <PackageReference Include="System.Drawing.Common" Version="8.0.0" />
-    <PackageReference Include="System.Windows.Forms" Version="5.0.0" Condition="'$(TargetFramework)' == 'net8.0'" />
-    <PackageReference Include="NAudio" Version="2.2.1" />
-    <PackageReference Include="NAudio.Lame" Version="2.1.0" />
-    <PackageReference Include="Tesseract" Version="5.2.0" />
-    <PackageReference Include="Whisper.net" Version="1.7.0" />
-    <PackageReference Include="Whisper.net.Runtime" Version="1.7.0" />
+    <PackageReference Include="SharpCompress" Version="1.0.0" />
     <PackageReference Include="System.Management" Version="8.0.0" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\WindowsToolbox.Core\WindowsToolbox.Core.csproj" />
+  </ItemGroup>
+
+  <!--
+    These merged candidate implementations currently contain unresolved API and
+    platform integration errors. Keep the source for follow-up work, but do not
+    compile or advertise it until its category passes the Windows build.
+  -->
+  <ItemGroup>
+    <Compile Remove="Audio\**\*.cs" />
+    <Compile Remove="Document\**\*.cs" />
+    <Compile Remove="Image\**\*.cs" />
+    <Compile Remove="TextAndSpeech\**\*.cs" />
+    <Compile Remove="Video\**\*.cs" />
   </ItemGroup>
 </Project>

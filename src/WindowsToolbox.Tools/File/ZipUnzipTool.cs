@@ -1,7 +1,7 @@
 using System.IO.Compression;
 using WindowsToolbox.Core.Interfaces;
 
-namespace WindowsToolbox.Tools.File;
+namespace WindowsToolbox.Tools.FileUtilities;
 
 public class ZipUnzipTool : BaseTool
 {

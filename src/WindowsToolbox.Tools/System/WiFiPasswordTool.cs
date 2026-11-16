@@ -3,7 +3,7 @@ using System.Text;
 using System.Text.RegularExpressions;
 using WindowsToolbox.Core.Interfaces;
 
-namespace WindowsToolbox.Tools.System;
+namespace WindowsToolbox.Tools.SystemUtilities;
 
 public class WiFiPasswordTool : BaseTool
 {
