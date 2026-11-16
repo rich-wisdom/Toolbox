@@ -8,6 +8,7 @@ using WindowsToolbox.Core.Interfaces;
 using WindowsToolbox.Core.Services;
 using WindowsToolbox.Tools.Developer;
 using WindowsToolbox.Tools.File;
+using WindowsToolbox.Tools.System;
 
 namespace WindowsToolbox.App;
 
@@ -50,6 +51,24 @@ public partial class App : Application
                     {
                         new JsonFormatterTool(),
                         new QRCodeTool(),
+                        new StorageExplorerTool(),
+                        new BatteryHealthTool(),
+                        new NetworkSpeedTestTool(),
+                        new WiFiPasswordTool(),
+                        new KeepAwakeTool(),
+                        new UninstallAppTool(),
+                        new ClipboardHistoryTool(),
+                        new DiskSpeedTestTool(),
+                        new PresentationModeTool(),
+                        new CleanKeyboardTool(),
+                        new DisplayControlTool(),
+                        new MouseFixesTool(),
+                        new DeadPixelTestTool(),
+                        new EjectAllDisksTool(),
+                        new LoginItemsTool(),
+                        new FixAppDamagedTool(),
+                        new ResetPermissionsTool(),
+                        new HiddenSettingsTool(),
                     };
                     return new ToolRegistry(tools);
                 });
