@@ -1,0 +1,20 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <RootNamespace>WindowsToolbox.Tools</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="FFMpegCore" Version="5.1.0" />
+    <PackageReference Include="SixLabors.ImageSharp" Version="3.1.4" />
+    <PackageReference Include="itext7" Version="8.0.3" />
+    <PackageReference Include="QRCoder" Version="1.6.0" />
+    <PackageReference Include="SharpCompress" Version="0.37.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\WindowsToolbox.Core\WindowsToolbox.Core.csproj" />
+  </ItemGroup>
+</Project>

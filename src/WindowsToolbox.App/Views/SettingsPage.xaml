@@ -1,0 +1,53 @@
+<Page
+    x:Class="WindowsToolbox.App.Views.SettingsPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <ScrollViewer>
+        <StackPanel Padding="40" Spacing="30">
+            <TextBlock Text="Settings"
+                       Style="{StaticResource TitleTextBlockStyle}"/>
+
+            <StackPanel Spacing="15">
+                <TextBlock Text="General"
+                           Style="{StaticResource SubtitleTextBlockStyle}"/>
+                
+                <TextBox Header="Output Folder"
+                         PlaceholderText="Default: Downloads folder"
+                         Width="400"
+                         HorizontalAlignment="Left"/>
+
+                <ToggleSwitch Header="Launch at startup"
+                              IsOn="False"/>
+
+                <ToggleSwitch Header="Show notifications"
+                              IsOn="True"/>
+            </StackPanel>
+
+            <StackPanel Spacing="15">
+                <TextBlock Text="Quick Launcher"
+                           Style="{StaticResource SubtitleTextBlockStyle}"/>
+                
+                <TextBlock Text="Hotkey: Ctrl+Alt+Space"
+                           Opacity="0.7"/>
+
+                <ToggleSwitch Header="Enable quick launcher"
+                              IsOn="True"/>
+            </StackPanel>
+
+            <StackPanel Spacing="15">
+                <TextBlock Text="About"
+                           Style="{StaticResource SubtitleTextBlockStyle}"/>
+                
+                <TextBlock Text="Windows Toolbox v1.0.0"
+                           Opacity="0.7"/>
+                
+                <HyperlinkButton Content="View on GitHub"
+                                 NavigateUri="https://github.com/rich-wisdom/windows-toolbox"/>
+            </StackPanel>
+        </StackPanel>
+    </ScrollViewer>
+</Page>
